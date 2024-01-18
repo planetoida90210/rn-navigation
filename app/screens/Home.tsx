@@ -25,6 +25,7 @@ const Home = ({navigation}: HomePageProps) => {
       <Button title='Details 1337' onPress={() => navigation.push('Details', {itemId: 1337})} />
       <Button title='Details 42' onPress={() => navigation.push('Details', {itemId: 42})} />
       <Button title='Open Drawer' onPress={() => navigation.navigate("Drawer")} />
+      <Button title='Open Modal' onPress={() => navigation.navigate("Modal")} />
     </View>
   )
 }
