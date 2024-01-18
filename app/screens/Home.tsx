@@ -1,9 +1,21 @@
 import { View, Text, Button } from 'react-native'
-import React from 'react'
+import React, { useLayoutEffect } from 'react'
 import { HomePageProps } from '../navigation/RootStack'
 
 
 const Home = ({navigation}: HomePageProps) => {
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <Button
+          onPress={() => alert('This is a button!')}
+          title="Info"
+          color="#fff"
+        />
+      ),
+    })
+  }, [navigation])
 
   return (
     <View>

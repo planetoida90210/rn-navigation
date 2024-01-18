@@ -1,9 +1,18 @@
 import { View, Text } from 'react-native'
-import React from 'react'
+import React, { useLayoutEffect } from 'react'
 import { DetailsPageProps } from '../navigation/RootStack'
 
 const Details = ({navigation, route}: DetailsPageProps) => {
-    const {itemId} = route.params
+
+  const {itemId} = route.params
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: `Details: ${itemId}`,
+    })
+  }, [navigation])
+
+
   return (
     <View>
       <Text>Details: {itemId}</Text>
