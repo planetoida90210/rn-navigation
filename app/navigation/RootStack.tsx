@@ -3,12 +3,14 @@ import Home from "../screens/Home";
 import Feed from "../screens/Feed";
 import Profile from "../screens/Profile";
 import Details from "../screens/Details";
+import DrawerNavigation from "./DrawerNav";
 
 type RootStackParamList = {
     Home: undefined;
     Feed: undefined;
     Profile: undefined;
     Details: { itemId: number}
+    Drawer: undefined;
 }
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
@@ -33,6 +35,7 @@ const RootStackNavigation = () => {
       <RootStack.Screen name="Feed" component={Feed} />
       <RootStack.Screen name="Profile" component={Profile} />
       <RootStack.Screen name="Details" component={Details} />
+      <RootStack.Screen name="Drawer" component={DrawerNavigation} options={{headerShown: false}} />
     </RootStack.Navigator>
   );
 }
